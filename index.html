@@ -358,9 +358,10 @@
 <blockquote>
 <p>Use your DirectiQ user name and API key in headers to authorize:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X GET 
-     -H <span class="s2">"user-name: your-user-name"</span> 
-     -H <span class="s2">"api-key: your-api-key"</span> 
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https:/restapi.directiq.com/campaigns <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
 </code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
 <span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
 
