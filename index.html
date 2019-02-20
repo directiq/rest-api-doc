@@ -1,0 +1,1606 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>DirectIQ API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;csharp&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="csharp">csharp</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#contacts" class="toc-h1 toc-link" data-title="contacts">Contacts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-contacts" class="toc-h2 toc-link" data-title="get-all-contacts">Get All Contacts</a>
+                  </li>
+                  <li>
+                    <a href="#get-contact-by-id" class="toc-h2 toc-link" data-title="get-contact-by-id">Get Contact by Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-contacts-by-list-id" class="toc-h2 toc-link" data-title="get-all-contacts-by-list-id">Get All Contacts by List Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-active-contacts-by-list-id" class="toc-h2 toc-link" data-title="get-active-contacts-by-list-id">Get Active Contacts by List Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-passive-contacts-by-list-id" class="toc-h2 toc-link" data-title="get-passive-contacts-by-list-id">Get Passive Contacts by List Id</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-contact-by-list-id" class="toc-h2 toc-link" data-title="create-a-contact-by-list-id">Create a Contact by List Id</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-contact-from-a-list" class="toc-h2 toc-link" data-title="delete-a-contact-from-a-list">Delete a Contact From a List</a>
+                  </li>
+                  <li>
+                    <a href="#upload-file-for-bulk-insert" class="toc-h2 toc-link" data-title="upload-file-for-bulk-insert">Upload File For Bulk Insert</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#contact-lists" class="toc-h1 toc-link" data-title="contact-lists">Contact Lists</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-contact-lists" class="toc-h2 toc-link" data-title="get-all-contact-lists">Get All Contact Lists</a>
+                  </li>
+                  <li>
+                    <a href="#get-contact-list-by-id" class="toc-h2 toc-link" data-title="get-contact-list-by-id">Get Contact List by Id</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-contact-list" class="toc-h2 toc-link" data-title="create-a-contact-list">Create a Contact List</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-list" class="toc-h2 toc-link" data-title="delete-a-list">Delete a List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#campaigns" class="toc-h1 toc-link" data-title="campaigns">Campaigns</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-campaigns" class="toc-h2 toc-link" data-title="get-all-campaigns">Get All Campaigns</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-campaign" class="toc-h2 toc-link" data-title="create-a-campaign">Create a Campaign</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#templates" class="toc-h1 toc-link" data-title="templates">Templates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-templates" class="toc-h2 toc-link" data-title="get-all-templates">Get All Templates</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-template" class="toc-h2 toc-link" data-title="create-a-template">Create a Template</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stats" class="toc-h1 toc-link" data-title="stats">Stats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-stats" class="toc-h2 toc-link" data-title="get-stats">Get Stats</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reads" class="toc-h1 toc-link" data-title="reads">Reads</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-reads" class="toc-h2 toc-link" data-title="get-all-reads">Get All Reads</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#clicks" class="toc-h1 toc-link" data-title="clicks">Clicks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-clicks" class="toc-h2 toc-link" data-title="get-all-clicks">Get All Clicks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#unsubscribes" class="toc-h1 toc-link" data-title="unsubscribes">Unsubscribes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-unsubscribes" class="toc-h2 toc-link" data-title="get-all-unsubscribes">Get All Unsubscribes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#spam-complaints" class="toc-h1 toc-link" data-title="spam-complaints">Spam Complaints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-spam-complaints" class="toc-h2 toc-link" data-title="get-all-spam-complaints">Get All Spam Complaints</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#mail-froms" class="toc-h1 toc-link" data-title="mail-froms">Mail-Froms</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-mail-froms" class="toc-h2 toc-link" data-title="get-all-mail-froms">Get All Mail-Froms</a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://www.directiq.com/'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the DirectIQ API. You can use our API to access DirectIQ data endpoints, which can get information on contacts, contact lists, templates, campaigns and reports in your account.</p>
+
+<p>We have language bindings in Shell and C#. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>Use your DirectiQ user name and API key in headers to authorize:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X GET 
+     -H <span class="s2">"user-name: your-user-name"</span> 
+     -H <span class="s2">"api-key: your-api-key"</span> 
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id istead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"clicks/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>your-api-key</code> with your API key, and <code>your-user-name</code> with your DirectIQ user name.</p>
+</blockquote>
+
+<p>All you need to do is to use your DirectIQ <b>user name</b> and <b>API key</b> and pass them as headers with each call to our API endpoints.</p>
+
+<p>You can access your API key from <b>My Account &gt; Social Media &amp; Integrations &gt; API Integration</b> in your DirectIQ dashboard.</p>
+
+<p>If you are not a registered DirectIQ user, you can <a href="https://www.directiq.com">register here</a>.</p>
+<h1 id='contacts'>Contacts</h1>
+<p>Contact info holds the email address and other details like first name, last name and etc.</p>
+<h2 id='get-all-contacts'>Get All Contacts</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contacts/view <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/view"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">29317401</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-02T19:02:39"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your contacts.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contacts/view</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+<h2 id='get-contact-by-id'>Get Contact by Id</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contacts/<span class="o">{</span>contactId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own contact id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">29317401</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-02T19:02:39"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a contact info given its id.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contacts/{contactId}</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contactId</td>
+<td>Contact id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-contacts-by-list-id'>Get All Contacts by List Id</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contacts/view/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/view/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">29317401</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-02T19:02:39"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves contacts of a specified list.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contacts/view/{listId}</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='get-active-contacts-by-list-id'>Get Active Contacts by List Id</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contacts/active/view/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/active/view/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">456210</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-24T19:28:11"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all active contacts of a specified list.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contacts/active/view/{listId}</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='get-passive-contacts-by-list-id'>Get Passive Contacts by List Id</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contacts/passive/view/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/passive/view/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">456210</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-24T19:28:11"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all passive contacts of a specified list.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contacts/passive/view/{listId}</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-contact-by-list-id'>Create a Contact by List Id</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://restapi.directiq.com/contacts/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span> <span class="se">\</span>
+  -d <span class="s1">'{"Email": "email@address.com", "FirstName" : "John", "LastName" : "Smith"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"Email\": \"email@address.com\", 
+</span>   <span class="err">\</span><span class="s">"FirstName\" : \"John\", \"LastName\" : \"Smith\"}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds a contact to a specified list.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://restapi.directiq.com/contacts/{listId}</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-contact-from-a-list'>Delete a Contact From a List</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  https://restapi.directiq.com/contacts/delete/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span> <span class="se">\</span>
+  -d <span class="s1">'{"Email": "email@address.com"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/delete/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"Email\": \"email@address.com\"}"</span><span class="p">,</span>
+    <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"DateAdded"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"BirthDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended4"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended5"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended6"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended7"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended8"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended9"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended10"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended11"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended12"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended13"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended14"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Extended15"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"IsActive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"CanBeReactivated"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Permission"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a contact from a specified list.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>DELETE https://restapi.directiq.com/contacts/delete/{listId}</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='upload-file-for-bulk-insert'>Upload File For Bulk Insert</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://restapi.directiq.com/contacts/upload/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: multipart/form-data'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span> <span class="se">\</span>
+  -F <span class="nv">FILE_TO_UPLOAD</span><span class="o">=</span>@csvFile.csv
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contacts/upload/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"multipart/form-data"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"multipart/form-data"</span><span class="p">,</span> <span class="s">"Content-Disposition: form-data; 
+</span>        <span class="n">name</span><span class="p">=</span><span class="err">\</span><span class="s">"FILE_TO_UPLOAD\"; filename=\"csvFile.csv\"\r\nContent-Type: false"</span><span class="p">,</span>
+        <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">200</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds contacts to a specified list.</p>
+<h3 id='csv-file'>CSV File</h3>
+<p>Use a csv file containing your contacts info and upload it to the end point. You must provide at least <b>&quot;email&quot;</b> as the header. This field holds the email addresses of your contacts. You can also provide the common <b>&quot;firstname&quot;</b> and <b>&quot;lastname&quot;</b> as headers.</p>
+
+<aside class="warning">Header names must be exactly the same as stated here.</aside>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://restapi.directiq.com/contacts/upload/{listId}</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='contact-lists'>Contact Lists</h1>
+<p>Contact lists are containers which hold contact objects that you use for your campaigns.</p>
+<h2 id='get-all-contact-lists'>Get All Contact Lists</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https://restapi.directiq.com/contactlists <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contactlists"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">587658</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"777"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LastUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-19T11:23:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">8765786</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Active"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Passive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"HashId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000-0000-0000-0000-000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsLocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsDoubleOptIn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your contact lists.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contactlists</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+<h2 id='get-contact-list-by-id'>Get Contact List by Id</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://restapi.directiq.com/contactlists/view/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of "65767676" </span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contactlists/view/65767676"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">65767676</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"777"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"LastUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-19T11:23:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">773</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">7437905</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Active"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Passive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"HashId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000-0000-0000-0000-000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IsLocked"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IsVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IsDoubleOptIn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the specified contact list by its id.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/contactlists/view/{listId}</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-contact-list'>Create a Contact List</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+   https://restapi.directiq.com/contactlists?name<span class="o">={</span>MyListName<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list name instead of "your-list-name" </span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contactlists?name=your-list-name"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">133718</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">integer</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">id.</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a contact list given its name.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://restapi.directiq.com/contactlists?name={your-list-name}</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name as a string value.</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-list'>Delete a List</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  https://restapi.directiq.com/contactlists/delete/<span class="o">{</span>listId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own list id instead of 56353 </span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"contactlists/delete/56353"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="mi">56353</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">integer</span><span class="w"> </span><span class="err">value</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">list</span><span class="w"> </span><span class="err">id.</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a contact list given its id.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE https://restapi.directiq.com/contactlists/delete/{listId}</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listId</td>
+<td>List id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='campaigns'>Campaigns</h1>
+<p>Campaigns are the heart of the DirectIQ system. They hold many important information like your email template, delivery email lists and schedules for sending.</p>
+<h2 id='get-all-campaigns'>Get All Campaigns</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https:/restapi.directiq.com/campaigns <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"campaigns"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45365632222</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auto Test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auto Test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TemplateId"</span><span class="p">:</span><span class="w"> </span><span class="mi">52563563</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ListIds"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TimeToSend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T07:00:09"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SenderEmailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your campaigns.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/campaigns</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+<h2 id='create-a-campaign'>Create a Campaign</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://restapi.directiq.com/campaigns <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span> <span class="se">\</span>
+  -d <span class="s1">'{"Name" : "My Campaign","Subject" : "My Subject","TemplateId" : 534453,
+     "ListIds" : [132664564576], "TimeToSend" : "4/11/2018 2:00:00 PM",
+     "SenderEmailId" : 28312378}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"campaigns"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"Name\" : \"My Campaign\",
+</span>    <span class="err">\</span><span class="s">"Subject\" : \"My Subject\",\"TemplateId\" : 534453,\"ListIds\" : [132664564576],
+</span>    <span class="err">\</span><span class="s">"TimeToSend\" : \"4/11/2018 2:00:00 PM\",\"SenderEmailId\" : 28312378}"</span><span class="p">,</span>
+    <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Campaign"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Subject"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TemplateId"</span><span class="p">:</span><span class="w"> </span><span class="mi">534453</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ListIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="mi">132664564576</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"TimeToSend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-11T14:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"SenderEmailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">28312378</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a campaign.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://restapi.directiq.com/campaigns</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>None</p>
+<h1 id='templates'>Templates</h1>
+<p>Templates are the email contents generally in the HTML form that you use in your campaigns.</p>
+<h2 id='get-all-templates'>Get All Templates</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/templates <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"templates"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">252534</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test 001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test 001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;html&gt;</span><span class="se">\r\n</span><span class="s2">&lt;head&gt;</span><span class="se">\r\n\t</span><span class="s2">&lt;title&gt;&lt;/title&gt;</span><span class="se">\r\n\t\r\n</span><span class="s2">&lt;/head&gt;
+        </span><span class="se">\r\n</span><span class="s2">&lt;body&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;Template body.&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/body&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/html&gt;</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TextBody"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\r\n\r\n\t\r\n\t\r\n\r\n\r\n</span><span class="s2">Template body.</span><span class="se">\r\n\r\n\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23T11:31:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all of your templates.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/templates</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+<h2 id='create-a-template'>Create a Template</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https:/restapi.directiq.com/templates <span class="se">\</span>
+  -H <span class="s1">'api-key: your-api-key'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'user-name: your-user-name'</span> <span class="se">\</span>
+  -d <span class="s1">'{"Name":"Auto Test","Subject":"Auto Test","Body":"&lt;html&gt;&lt;body&gt;&lt;p&gt;Auto Test&lt;/p&gt;
+      &lt;/body&gt;&lt;/html&gt;","TextBody":"Auto Test","UpdateDate":"4/5/2018 2:00:09 PM"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"templates"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"Name\":\"Auto Test\",\"Subject\":\"Auto Test\",
+</span>    <span class="err">\</span><span class="s">"Body\":\"&lt;html&gt;&lt;body&gt;&lt;p&gt;Auto Test&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;\",
+</span>    <span class="err">\</span><span class="s">"TextBody\":\"Auto Test\",\"UpdateDate\":\"4/5/2018 2:00:09 PM\"}"</span><span class="p">,</span>
+    <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auto Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auto Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;html&gt;&lt;body&gt;&lt;p&gt;Auto Test&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"TextBody"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Auto Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"UpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T14:00:09"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a template.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://restapi.directiq.com/templates</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>None</p>
+<h1 id='stats'>Stats</h1>
+<p>Stats includes statistics about recepients, bounces, delivers, reads, clicks, spams, unsubscribes, hardbounces, readsUnique, forwards of the specified campaign.</p>
+<h2 id='get-stats'>Get Stats</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/stats/<span class="o">{</span>campaingId<span class="o">}</span> <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"stats/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">47312249</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Recepients"</span><span class="p">:</span><span class="w"> </span><span class="mi">1183</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Bounces"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Delivers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1129</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Reads"</span><span class="p">:</span><span class="w"> </span><span class="mi">451</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Spams"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Unsubscribes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Hardbounces"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ReadsUnique"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Forwards"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves stats of a specified campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/stats/{campaignId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>Campaign id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='reads'>Reads</h1>
+<p>Every read event is recorded when a campaign email is opened by the reciever.</p>
+<h2 id='get-all-reads'>Get All Reads</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/reads/<span class="o">{</span>campaingId<span class="o">}</span> <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"reads/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">197403757</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">55849</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">54668772</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11304932758</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-20T18:13:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IpAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61.101.18.144"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IpLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">11131343020</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CountryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florida"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UserAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Windows NT 5.1; rv:11.0) 
+        Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all reads of a specified campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/reads/{campaignId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>Campaign id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='clicks'>Clicks</h1>
+<p>Every click event is recorded when a campaign email is opened and the receiver clicks on any link on that email.</p>
+<h2 id='get-all-clicks'>Get All Clicks</h2><pre class="highlight shell tab-shell"><code>curl -X GET  <span class="se">\</span>
+     https:/restapi.directiq.com/clicks/<span class="o">{</span>campaingId<span class="o">}</span> <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"clicks/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23435670</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1538491</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">46873723</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.directiq10.com/FORWARD/NDY4NzcyLTExMzA5Mjc1OA=="</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-20T18:14:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IpAddrees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.226.128.51"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IpLong"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400719923"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CountryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jacksonville"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"LinkId"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florida"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UserAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all clicks of a specified campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/clicks/{campaignId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>Campaign id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='unsubscribes'>Unsubscribes</h1>
+<p>Every unsubscribe event is recorded when a campaign email is opened by the receiver and &quot;Unsubscribe&quot; link in the footer of the email is clicked.</p>
+<h2 id='get-all-unsubscribes'>Get All Unsubscribes</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/unsubscribes/<span class="o">{</span>campaingId<span class="o">}</span> <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"unsubscribes/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23159386</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1837355</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">47315229</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">124652349787</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-10T10:35:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"someone@someaddress.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all unsubscribes of a specified campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/unsubscribes/{campaignId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>Campaign id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='spam-complaints'>Spam Complaints</h1>
+<p>Every spam complaint event is recorded when a campaign email is opened by the receiver and &quot;Report Unsolicited&quot; link in the footer of the email is clicked.</p>
+<h2 id='get-all-spam-complaints'>Get All Spam Complaints</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/spamcomplaints/<span class="o">{</span>campaingId<span class="o">}</span> <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="c1">// Use your own campaign id instead of "0101".</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"spamcomplaints/0101"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53517566</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1548549</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11230927558</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-18T19:40:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">47222553</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footer Link"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all spam complaints of a specified campaign.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/spamcomplaints/{campaignId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>campaignId</td>
+<td>Campaign id as an integer value.</td>
+</tr>
+</tbody></table>
+<h1 id='mail-froms'>Mail-Froms</h1>
+<p>Mail-From email addresses are the ones that you use as a sender address in your email campaigns.</p>
+<h2 id='get-all-mail-froms'>Get All Mail-Froms</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+     https:/restapi.directiq.com/mailfroms/ <span class="se">\</span>
+     -H <span class="s2">"user-name: your-user-name"</span> <span class="se">\</span>
+     -H <span class="s2">"api-key: your-api-key"</span> 
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Simple REST and HTTP API Client for .NET</span>
+<span class="k">using</span> <span class="nn">RestSharp</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://restapi.directiq.com/"</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="s">"mailfroms"</span><span class="p">,</span> <span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+
+<span class="c1">// Use your own user name instead of "your-user-name" </span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"user-name"</span><span class="p">,</span> <span class="s">"your-user-name"</span><span class="p">);</span>
+
+<span class="c1">// Use your own api key instead of "your-api-key"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"your-api-key"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2486258</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ClientId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1283755</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"FromEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-26T14:35:23.967"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IsConfirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"FromName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all mail-froms of your account.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://restapi.directiq.com/mailfroms</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="csharp">csharp</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
