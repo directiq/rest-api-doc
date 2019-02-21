@@ -63,6 +63,6 @@ var response = client.Execute(request);
 
 if you need any help or have any questions, please send an email to [support@directiq.com](mailto:support@directiq.com).
 
-## Go to REST API Reference
+## Go to the DirectIQ REST API Reference
 
 Go to [https://directiq.github.io/rest-api-doc/](https://directiq.github.io/rest-api-doc/) to see the full reference documentation.
